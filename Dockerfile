@@ -1,4 +1,4 @@
-FROM node:20-bookworm-slim 
+FROM node:21-bookworm-slim
 
 # RUN apk --no-cache -U upgrade
 RUN mkdir -p /app && chown -R node:node /app
