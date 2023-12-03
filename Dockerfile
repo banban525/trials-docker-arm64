@@ -1,11 +1,13 @@
 FROM node:21-bookworm-slim AS build
 
+USER node
+
 WORKDIR /app
-COPY package*.json ./
+COPY --chown=node:node package*.json ./
 RUN npm install
 
 WORKDIR /app
-COPY . .
+COPY --chown=node:node . .
 RUN npm run build
 
 
