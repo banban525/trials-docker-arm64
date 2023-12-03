@@ -16,7 +16,7 @@ FROM node:21-bookworm-slim AS runtime
 RUN mkdir -p /app/.ts-node && chown -R node:node /app
 WORKDIR /app
 
-COPY package*.json ./
+COPY --chown=node:node package*.json ./
 USER node
 
 RUN npm install --only=production
